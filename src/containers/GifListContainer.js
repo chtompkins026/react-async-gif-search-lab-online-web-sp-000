@@ -8,6 +8,10 @@ class GiftListContainer extends Component {
     gifs: []
   }
   
+  componentDidMount(){
+    this.handleSubmit(); 
+  }
+  
   
   
   render() {
