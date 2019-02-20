@@ -4,7 +4,7 @@ import GifSearch from '../components/GifSearch';
  
 class GiftListContainer extends Component {
   super(); 
-  this.state = {
+  state = {
     gifs: []
   }
   
