@@ -12,6 +12,7 @@ class GiftListContainer extends Component {
     this.handleSubmit(); 
   }
   
+  handleSubmit = (query = )
   
   
   render() {
