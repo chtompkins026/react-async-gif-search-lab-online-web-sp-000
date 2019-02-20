@@ -9,10 +9,12 @@ class GiftListContainer extends Component {
   }
   
   componentDidMount(){
-    this.handleSubmit(); 
+    this.fetchGiffys() 
   }
   
-  handleSubmit = (query = )
+  fetchGiffys = (query = 'dogs') => {
+    fetch()
+  };
   
   
   render() {
