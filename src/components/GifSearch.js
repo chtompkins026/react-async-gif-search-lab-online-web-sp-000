@@ -8,7 +8,7 @@ class GifSearch extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.FetchGif(this.state.query)
+    this.props.fetchGiffys(this.state.query)
   }
 
   render() {
