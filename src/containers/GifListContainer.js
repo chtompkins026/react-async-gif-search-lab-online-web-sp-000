@@ -12,11 +12,13 @@ class GiftListContainer extends Component {
     this.fetchGiffys() 
   }
   
-  fetchGiffys = (query = 'dogs') => {
-    fetch(`http://api.giphy.com/v1/gifs/search?q=${query}&api_key=dc6zaTOxFJmzC&rating=g`)
-    .then(res=> res.json())
-    .then({data}) => this.setState({gifs: data.map(gif => ({url: gif.images.original.url}) ) })
-  })
+  fetchGiffys = (query = "dogs") => {
+    fetch(`https://api.giphy.com/v1/gifs/search?q=${query}&api_key=dc6zaTOxFJmzC&rating=g&limit=3`)
+      .then(res => res.json())
+      .then(({data}) => {
+        this.setState({ gifs: data.map( gif => ({ url: gif.images.original.url }) ) });
+      });
+  };
   
   
   render() {
