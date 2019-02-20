@@ -7,19 +7,7 @@ class GiftListContainer extends Component {
   state = {
     gifs: []
   }
-  
-  componentDidMount(){
-    this.fetchGiffys() 
-  }
-  
-  fetchGiffys = (query = "dogs") => {
-    fetch(`https://api.giphy.com/v1/gifs/search?q=${query}&api_key=dc6zaTOxFJmzC&rating=g&limit=3`)
-      .then(res => res.json())
-      .then(({data}) => {
-        this.setState({ gifs: data.map( gif => ({ url: gif.images.original.url }) ) });
-      });
-  };
-  
+    
   render() {
     return (
       <div>
@@ -28,7 +16,20 @@ class GiftListContainer extends Component {
       </div>
     )
   }
- 
+  
+  
+  fetchGiffys = (query = "dogs") => {
+    fetch(`https://api.giphy.com/v1/gifs/search?q=${query}&api_key=dc6zaTOxFJmzC&rating=g&limit=3`)
+      .then(res => res.json())
+      .then(({data}) => {
+        this.setState({ gifs: data.map( gif => ({ url: gif.images.original.url }) ) });
+      });
+  }
+  
+  componentDidMount(){
+    this.fetchGiffys() 
+  }
+   
 }
  
 export default App
