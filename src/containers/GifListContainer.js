@@ -24,7 +24,8 @@ class GiftListContainer extends Component {
   render() {
     return (
       <div>
-        {this.state.gifs.map(gif => person.name)}
+        <GifSearch fetchGiffys={this.fetchGiffys} />
+        <GifList gifs={this.state.gifs} />
       </div>
     )
   }
